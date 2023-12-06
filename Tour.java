@@ -45,6 +45,14 @@ public class Tour {
         tour.add(tour.get(0));
     }
 
+    public List<City> getTour() {
+        return this.tour;
+    }
+
+    public void setTour(List<City> tour) {
+        this.tour = tour;
+    }
+
     public void addCity(City city) {
         /**
          * Adds a city to the tour.

@@ -40,8 +40,12 @@ public class MultipleTSP {
             List<City> currentCities = toursArray.get(i);
             Tour currentTour = new Tour(currentCities);
 
-            for (int j = 0; j < 2 * tspResult.tourSize() / numberOfSalesmans; j++) {
+            for (int j = 0; j < tspResult.tourSize(); j++) {
+                Tour cloneTour = new Tour(currentTour.getTour());
                 currentTour.removeIntersections();
+                if(currentTour.getDistance() > cloneTour.getDistance()) {
+                    currentTour.setTour(cloneTour.getTour());
+                }
             }
 
             mtspTours.add(currentTour);
