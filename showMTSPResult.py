@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from typing import List
 
 def getMTSPResultAndVisualization(filePath):
     with open(filePath, 'r') as file:
