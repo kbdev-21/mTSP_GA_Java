@@ -99,8 +99,10 @@ public class Main {
         long runningTime = endTime - startTime;
         System.out.println("Running time of " + cityDatasetPath + " dataset: " + runningTime + " milliseconds");
 
+        //write TSP result to txt file
         writeStringToFile(tspResult.toString(), "results/tspResult.txt");
 
+        //write mTSP result to txt file
         StringBuilder mtspResultString = new StringBuilder();
         for(int i = 0; i < salesmanTours.size(); i++) {
             if(i != 0) {
