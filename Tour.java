@@ -7,6 +7,12 @@ public class Tour {
     private List<City> tour = new ArrayList<>();
 
     public Tour() {
+        /**
+         * Initializes a Tour object.
+         * 
+         * Returns: 
+         * creating an empty tour.
+         */
         for (int i = 0; i < CitiesManager.numberOfCities(); i++) {
             this.tour.add(new City(-1, -1));
         }
@@ -17,18 +23,10 @@ public class Tour {
          * Initializes a Tour object.
          *
          * Parameters:
-         * - tour (List<City>): A list of City objects representing the tour (default is null for creating an empty tour).
+         * - tour (List<City>): A list of City objects representing the tour.
          */
-        if (tour == null) {
-            // create the tour with {CitiesManager.numberOfCities()} cities
-            // which all the cities have a default value
-            for (int i = 0; i < CitiesManager.numberOfCities(); i++) {
-                this.tour.add(new City(-1, -1));
-            }
-        } else {
-            // copy the tour parameter if it exists
-            this.tour = new ArrayList<>(tour);
-        }
+
+        this.tour = new ArrayList<>(tour);
     }
 
     public void generateIndividual() {
@@ -236,34 +234,5 @@ public class Tour {
             return 2;
         }
     }
-
-    // public void plotTour(String title) {
-    //     /**
-    //      * Represents the tour using matplotlib.
-    //      *
-    //      * Parameters:
-    //      * - title (String): The title of the plot.
-    //      */
-    //     List<Integer> x = new ArrayList<>();
-    //     List<Integer> y = new ArrayList<>();
-
-    //     for (City city : tour) {
-    //         x.add(city.getX());
-    //         y.add(city.getY());
-    //     }
-
-    //     plt.figure(new Figure(8, 6));
-    //     plt.plot(x, y, "bo-");
-    //     plt.title(title + "\nTotal distance: " + getDistance());
-    //     plt.xlabel("X Axis");
-    //     plt.ylabel("Y Axis");
-
-    //     for (int i = 0; i < tourSize(); i++) {
-    //         City city = getCity(i);
-    //         plt.text(city.getX(), city.getY(), String.valueOf(i));
-    //     }
-
-    //     plt.show();
-    // }
 }
 

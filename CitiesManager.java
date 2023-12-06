@@ -75,19 +75,5 @@ public class CitiesManager {
 
         return centerCity;
     }
-
-    public static void main(String[] args) {
-        // Example usage
-        City city1 = new City();
-        City city2 = new City(50, 100);
-
-        newCity(city1);
-        newCity(city2);
-
-        System.out.println("Number of Cities: " + numberOfCities());
-        System.out.println("City at index 0: " + getCity(0).toString());
-        System.out.println("City at index 1: " + getCity(1).toString());
-        System.out.println("Center City: " + centerCity().toString());
-    }
 }
 
