@@ -156,7 +156,7 @@ public class Main {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             // Write the content to the file
             writer.write(content);
-            System.out.println("Content has been written to the file successfully.");
+            System.out.println("Result has been saved to the file");
         } catch (IOException e) {
             // Handle IOException, e.g., file not found or permission issues
             System.err.println("Error writing to the file: " + e.getMessage());
