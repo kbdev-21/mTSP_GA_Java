@@ -1,0 +1,33 @@
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Eclipse project files
+.project
+.classpath
+.settings/
+
+# IntelliJ project files
+.idea/
+
+# NetBeans project files
+nbproject/
+
+# BlueJ project files
+BlueJ/
+
+# Gradle files
+.gradle/
+
+# Maven files
+target/
+*.iml
+*.ipr
+*.iws
+
+# Other build tools
+build/
