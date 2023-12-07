@@ -9,7 +9,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        String cityDatasetPath = "datasets/50cities_5mans.txt";
+        String cityDatasetPath = "datasets/random_dataset.txt";
         int numberOfSalesmans = importCitiesAndNumOfSalesman(cityDatasetPath);
 
         // Customizable parameters using in the algorithm:
@@ -18,7 +18,7 @@ public class Main {
         int maxUnchangedGeneration = 100;
         int nbest = 2;
         int tournamentSize = 2;
-        int stopCondition = 2000;
+        int stopCondition = 4000;
 
         // Hybrid Genetic Algorithm
         // initialize a random population
@@ -100,7 +100,7 @@ public class Main {
         System.out.println("Running time of " + cityDatasetPath + " dataset: " + runningTime + " milliseconds");
 
         //write TSP result to txt file
-        writeStringToFile(tspResult.toString(), "results/tspResult.txt");
+        FileHelper.writeStringToFile(tspResult.toString(), "results/tspResult.txt");
 
         //write mTSP result to txt file
         StringBuilder mtspResultString = new StringBuilder();
@@ -110,7 +110,7 @@ public class Main {
             }
             mtspResultString.append(salesmanTours.get(i).toString());
         }
-        writeStringToFile(mtspResultString.toString(), "results/mtspResult.txt");
+        FileHelper.writeStringToFile(mtspResultString.toString(), "results/mtspResult.txt");
     }
 
     private static int importCitiesAndNumOfSalesman(String filePath) {
@@ -150,16 +150,5 @@ public class Main {
         }
         // Return the number of salesmen specified in the file
         return numberOfSalesmans;
-    }
-
-    private static void writeStringToFile(String content, String filePath) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            // Write the content to the file
-            writer.write(content);
-            System.out.println("Result has been saved to the file");
-        } catch (IOException e) {
-            // Handle IOException, e.g., file not found or permission issues
-            System.err.println("Error writing to the file: " + e.getMessage());
-        }
     }
 }

@@ -48,7 +48,7 @@ public class CitiesManager {
          */
         // Initialize variables
         City centerCity = citiesList.get(0);
-        double distance = Double.NEGATIVE_INFINITY;  // Set initial distance to negative infinity
+        double distance = Double.POSITIVE_INFINITY;  // Set initial distance to negative infinity
         
         int maxX = 0;
         int maxY = 0;
@@ -62,7 +62,7 @@ public class CitiesManager {
         }
         
         City centerCityCoordinate = new City(maxX / 2, maxY / 2);
-
+        
         // Find the city nearest from the center
         for (City city : citiesList) {
             double distanceToCenter = city.distanceTo(centerCityCoordinate);
@@ -73,6 +73,7 @@ public class CitiesManager {
             }
         }
 
+        //System.out.println("CENTER CITY: " + centerCity.toString());
         return centerCity;
     }
 }
