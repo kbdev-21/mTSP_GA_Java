@@ -8,7 +8,7 @@ public class GenerateDataset {
     //generate a random dataset and write it into "random_dataset.txt"
     public static void main(String[] args) {
         //customizable value
-        int numberOfCities = 50;
+        int numberOfCities = 50; //currently not support over 500
         int numberOfSalesman = 5; 
 
         // Generate random numbers and add them to an array
@@ -29,10 +29,10 @@ public class GenerateDataset {
     }
 
     private static int[] generateRandomNumbersArray(int n) {
-        int bound = 200;
+        int bound = 500;
 
         if(n > bound) {
-            System.out.println("ERROR!");
+            System.out.println("Out of bound!");
             return null;
         }
         
