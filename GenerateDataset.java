@@ -1,9 +1,11 @@
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
+/**
+ * Run this file to insert a random dataset into the /datasets folder 
+ */
 public class GenerateDataset {
     //generate a random dataset and write it into "random_dataset.txt"
     public static void main(String[] args) {
@@ -28,6 +30,11 @@ public class GenerateDataset {
         FileHelper.writeStringToFile(dataset.toString(), "datasets/random_dataset.txt");
     }
 
+    /**
+     * A random numbers function
+     * @param n
+     * @return
+     */
     private static int[] generateRandomNumbersArray(int n) {
         int bound = 500;
 

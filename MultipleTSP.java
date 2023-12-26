@@ -1,9 +1,13 @@
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MultipleTSP {
-
+    /**
+     * 
+     * @param tspResult: a Tour get after solving TSP problem
+     * @param numberOfSalesmans: number of salesman, which defined in the input
+     * @return: a List<Tour> with each tour for each salesman
+     */
     public static List<Tour> splitToursForEachSalesman(Tour tspResult, int numberOfSalesmans) {
         List<List<City>> toursArray = new ArrayList<>();
         for (int i = 0; i < numberOfSalesmans; i++) {
@@ -53,16 +57,4 @@ public class MultipleTSP {
 
         return mtspTours;
     }
-
-    // public static void plotMultipleTSPTours(List<Tour> mtspTours) {
-    //     Plotter plotter = new Plotter();
-    //     plotter.plotMultipleTSPTours(mtspTours);
-    // }
-
-    // public static class Plotter {
-    //     public void plotMultipleTSPTours(List<Tour> mtspTours) {
-    //         Plotter plotter = new Plotter();
-    //         plotter.plotMultipleTSPTours(mtspTours);
-    //     }
-    // }
 }

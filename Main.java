@@ -1,14 +1,11 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-
+    /**
+     * The algorithm will run here
+     */
     public static void main(String[] args) {
+        // Setup the dataset  
         String cityDatasetPath = "datasets/random_dataset.txt";
         int numberOfSalesmans = FileHelper.importCitiesAndNumOfSalesman(cityDatasetPath);
 

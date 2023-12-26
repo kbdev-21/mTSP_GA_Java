@@ -6,46 +6,36 @@ public class CitiesManager {
     // A list to store the cities
     private static List<City> citiesList = new ArrayList<>();
 
+    /**
+     * Add a new city to the city pool.
+     * @param city(City): The City object to be added to the city pool.
+     */
     public static void newCity(City city) {
-        /**
-         * Adds a new city to the city pool.
-         *
-         * Parameters:
-         * - city (City): The City object to be added to the city pool.
-         */
         citiesList.add(city);
     }
 
+    /**
+     * Gets the city at the specified index from the city pool.
+     * @param index(int): The index of the city to retrieve.
+     * @return City: The City object at the specified index.
+     */
     public static City getCity(int index) {
-        /**
-         * Gets the city at the specified index from the city pool.
-         *
-         * Parameters:
-         * - index (int): The index of the city to retrieve.
-         *
-         * Returns:
-         * City: The City object at the specified index.
-         */
         return citiesList.get(index);
     }
 
+    /**
+     * Gets the total number of cities in the city pool.
+     * @return int: The number of cities in the city pool.
+     */
     public static int numberOfCities() {
-        /**
-         * Gets the total number of cities in the city pool.
-         *
-         * Returns:
-         * int: The number of cities in the city pool.
-         */
         return citiesList.size();
     }
 
+    /**
+     * Gets the city that is nearest from the center of the coordinate system.
+     * @return City: The city object that is nearest from the center.
+     */
     public static City centerCity() {
-        /**
-         * Gets the city that is nearest from the center of the coordinate system.
-         *
-         * Returns:
-         * City: The city object that is nearest from the center.
-         */
         // Initialize variables
         City centerCity = citiesList.get(0);
         double distance = Double.POSITIVE_INFINITY;  // Set initial distance to negative infinity

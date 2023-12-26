@@ -6,6 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileHelper {
+    /**
+     * Simply write a content and save it to a .txt file
+     * @param content
+     * @param filePath
+     */
     public static void writeStringToFile(String content, String filePath) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             // Write the content to the file
@@ -17,16 +22,12 @@ public class FileHelper {
         }
     }
 
+    /**
+     * Reads data from a file, initializes City objects, and updates CitiesManager.
+     * @param filePath: The path to the file containing salesmen and cities data.
+     * @return: The number of salesmen as specified in the file.
+     */
     public static int importCitiesAndNumOfSalesman(String filePath) {
-        /**
-         * Reads data from a file, initializes City objects, and updates CitiesManager.
-         *
-         * Parameters:
-         * filePath The path to the file containing salesmen and cities data.
-         * 
-         * Returns:
-         * The number of salesmen as specified in the file.
-         */
         int numberOfSalesmans = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;

@@ -3,44 +3,32 @@ import java.util.Random;
  * Represents a city with coordinates on a 2D plane.
  */
 public class City {
-    // Maximum values for x and y coordinates
-    private static final int xMax = 200;
-    private static final int yMax = 200;
-
     // Coordinates of the city
     private int x;
     private int y;
 
     /**
-     * Default constructor that initializes a city with random coordinates within the specified maximum values.
+     * Parameterized constructor that allows specifying the x and y coordinates for the city.
+     * @param x: The x-coordinate of the city.
+     * @param y: The y-coordinate of the city.
      */
-    public City() {
-        this.x = new Random().nextInt(xMax + 1);
-        this.y = new Random().nextInt(yMax + 1);
-    }
-
     public City(int x, int y) {
-         /**
-         * Parameterized constructor that allows specifying the x and y coordinates for the city.
-         *
-         * Parameters:
-         *  x The x-coordinate of the city.
-         *  y The y-coordinate of the city.
-         */
         this.x = x;
         this.y = y;
     }
 
+    /**
+     * A simple getter
+     * @return int: The x-coordinate of the city.
+     */
     public int getX() {
-        /**
-         * Gets the x-coordinate of the city.
-         *
-         * Returns:
-         * The x-coordinate of the city.
-         */
         return this.x;
     }
 
+    /**
+     * A simple getter
+     * @return int: The y-coordinate of the city.
+     */
     public int getY() {
         return this.y;
         
@@ -61,23 +49,18 @@ public class City {
         return Math.sqrt(Math.pow(xDis, 2) + Math.pow(yDis, 2));
     }
 
+    /**
+     * return a string representation of the city in the format "(x, y)".
+     */
     public String toString() {
-        /**
-         * Provides a string representation of the city in the format "(x, y)".
-         *
-         * Returns: 
-         * The string representation of the city.
-         */
         return "(" + this.getX() + "," + this.getY() + ")";
     }
 
+    /**
+     * Checks if the city has a special condition (null check).
+     * @return True if the city has a special condition; otherwise, false.
+     */
     public boolean checkNull() {
-         /**
-         * Checks if the city has a special condition (null check).
-         *
-         * Returns: 
-         *  True if the city has a special condition; otherwise, false.
-         */
         return this.x == -1;
     }
 }
