@@ -1,0 +1,5 @@
+Steps to run the program:
+1. If you want to generate a random dataset, run GenerateDataset.java. The default datasets and the random one are stored in the /datasets folder
+2. To start the algorithm, run Main.java. You can choose the dataset that you want to solve there
+3. After finish the whole algorithm, the results for TSP and mTSP will be stored in the /results folder
+4. To visualize the results, run 2 .py files in /represent_result folder. Note that this feature requires matplotlib(a python library) to be installed to run
