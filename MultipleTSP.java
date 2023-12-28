@@ -3,13 +3,15 @@ import java.util.List;
 
 public class MultipleTSP {
     /**
-     * 
+     * Split for mTSP
      * @param tspResult: a Tour get after solving TSP problem
      * @param numberOfSalesmans: number of salesman, which defined in the input
      * @return: a List<Tour> with each tour for each salesman
      */
-    public static List<Tour> splitToursForEachSalesman(Tour tspResult, int numberOfSalesmans) {
-        List<List<City>> toursArray = new ArrayList<>();
+    public static ArrayList<Tour> splitToursForEachSalesman(Tour tspResult, String datasetPath) {
+        int numberOfSalesmans = FileHelper.importNumberOfSalesman(datasetPath);
+
+        ArrayList<ArrayList<City>> toursArray = new ArrayList<>();
         for (int i = 0; i < numberOfSalesmans; i++) {
             toursArray.add(new ArrayList<>());
         }
@@ -38,10 +40,10 @@ public class MultipleTSP {
             }
         }
 
-        List<Tour> mtspTours = new ArrayList<>();
+        ArrayList<Tour> mtspTours = new ArrayList<>();
 
         for (int i = 0; i < numberOfSalesmans; i++) {
-            List<City> currentCities = toursArray.get(i);
+            ArrayList<City> currentCities = toursArray.get(i);
             Tour currentTour = new Tour(currentCities);
 
             for (int j = 0; j < tspResult.tourSize(); j++) {
