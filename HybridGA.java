@@ -32,14 +32,14 @@ public class HybridGA {
             population.sort();
 
             // get 2 parents using tournamentSelection
-            Tour parent1 = HybridGA.tournamentSelection(population, tournamentSize);
-            Tour parent2 = HybridGA.tournamentSelection(population, tournamentSize);
+            Tour parent1 = tournamentSelection(population, tournamentSize);
+            Tour parent2 = tournamentSelection(population, tournamentSize);
 
             // crossover to get a child
-            Tour child = HybridGA.crossover(parent1, parent2);
+            Tour child = crossover(parent1, parent2);
 
             // educate the child
-            HybridGA.educate(child);
+            educate(child);
 
             // add child to population
             population.addTour(child);
@@ -47,12 +47,12 @@ public class HybridGA {
             // if population size reach the customizable range, select survivors
             // (means sort and get best tours, remove all the others)
             if (population.getSize() == populationRange + populationSize) {
-                HybridGA.selectSurvivors(population, populationSize);
+                selectSurvivors(population, populationSize);
             }
 
             // diversify if the best individual is not improved after maxUnchangedGeneration
             if (unchangedCount == maxUnchangedGeneration) {
-                HybridGA.diversify(population, populationSize, nbest);
+                diversify(population, populationSize, nbest);
                 unchangedCount = 0;
             }
 
